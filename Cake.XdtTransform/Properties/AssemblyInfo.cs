@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("Cake.XdtTransform")]
 [assembly: AssemblyDescription("Helper to perform XDT based config file transforms.")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("Jamie Phillips")]
 [assembly: AssemblyProduct("Cake.XdtTransform")]
 [assembly: AssemblyCopyright("Copyright ©  2015")]
 [assembly: AssemblyTrademark("")]
