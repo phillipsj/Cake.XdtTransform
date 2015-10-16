@@ -15,7 +15,6 @@
     <tags>Cake Transform Config XDT</tags>
   </metadata>
   <files>
-    <file src="Microsoft.Web.XmlTransform.dll" target="lib/net45" />
-    <file src="LICENSE" />
+    <file src="bin/Release/Microsoft.Web.XmlTransform.dll" target="lib/net45" />
   </files>
 </package>
