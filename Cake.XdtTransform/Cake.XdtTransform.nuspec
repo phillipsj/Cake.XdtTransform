@@ -10,6 +10,9 @@
     <projectUrl>https://github.com/phillipsj/Cake.XdtTransform</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>$description$</description>
+    <dependencies>
+      <dependency id="Microsoft.Web.Xdt" version="2.1.1" targetFramework="net45"/>
+    </dependencies>
     <releaseNotes>Initial Release</releaseNotes>
     <copyright>Copyright 2015</copyright>
     <tags>Cake Transform Config XDT</tags>
