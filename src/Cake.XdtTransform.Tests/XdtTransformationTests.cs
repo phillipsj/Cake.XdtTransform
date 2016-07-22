@@ -1,12 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Cake.XdtTransform.Tests
+﻿namespace Cake.XdtTransform.Tests
 {
-    public class XdtTransformationTests
+    public sealed class XdtTransformationTests
     {
+        public void ShouldErrorIfSourceFileIsNull() {
+            
+        }
+
+        public void ShouldErrorIfTransformFileIsNull()
+        {
+
+        }
+
+        public void ShouldErrorIfTargetFileIsNull()
+        {
+
+        }
     }
 }
