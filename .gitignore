@@ -27,6 +27,7 @@ TestResults
 *.userprefs
 *.GhostDoc.xml
 *StyleCop.Cache
+*.sln.DotSettings
 
 # Build results
 [Dd]ebug/
