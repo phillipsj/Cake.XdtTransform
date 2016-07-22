@@ -3,14 +3,12 @@ using Cake.Core;
 using Cake.Core.Annotations;
 using Cake.Core.IO;
 
-namespace Cake.XdtTransform
-{
+namespace Cake.XdtTransform {
     /// <summary>
     /// Contains functionality for working with XDT transformations.
     /// </summary>
     [CakeAliasCategory("XDT")]
-    public static class XdtTransformationAlias
-    {
+    public static class XdtTransformationAlias {
         /// <summary>
         /// Transforms configuration files using XDT Transform library.
         /// </summary>
@@ -35,10 +33,8 @@ namespace Cake.XdtTransform
         /// <param name="targetFile">Output file name for the transformed file.</param>
         [CakeMethodAlias]
         public static void XdtTransformConfig(this ICakeContext context, FilePath sourceFile, FilePath transformFile,
-            FilePath targetFile)
-        {
-            if (context == null)
-            {
+            FilePath targetFile) {
+            if (context == null) {
                 throw new ArgumentNullException(nameof(context));
             }
             XdtTransformation.TransformConfig(sourceFile, transformFile, targetFile);
