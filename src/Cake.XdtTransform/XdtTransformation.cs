@@ -52,9 +52,7 @@ namespace Cake.XdtTransform {
                sourceConfigFile = fileSystem.GetFile(sourceFile),
                transformConfigFile = fileSystem.GetFile(transformFile),
                targetConfigFile = fileSystem.GetFile(targetFile);
-
-
-
+            
             using (Stream
                 sourceStream = sourceConfigFile.OpenRead(),
                 transformStream = transformConfigFile.OpenRead(),
