@@ -1,15 +1,15 @@
 <?xml version="1.0"?>
 <package >
   <metadata>
-    <id>$id$</id>
-    <version>$version$</version>
-    <title>$title$</title>
-    <authors>$author$</authors>
-    <owners>$author$</owners>
+    <id>Cake.XdtTransform</id>
+    <version>0.10.0.0</version>
+    <title>Cake.XdtTransform</title>
+    <authors>Jamie Phillips</authors>
+    <owners>Jamie Phillips</owners>
     <licenseUrl>https://github.com/phillipsj/Cake.XdtTransform</licenseUrl>
     <projectUrl>https://github.com/phillipsj/Cake.XdtTransform</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <description>$description$</description>
+    <description>Helper to perform XDT based config file transforms.</description>
     <releaseNotes>Initial Release</releaseNotes>
     <copyright>Copyright 2015</copyright>
     <tags>Cake Transform Config XDT</tags>

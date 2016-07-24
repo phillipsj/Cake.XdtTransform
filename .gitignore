@@ -53,6 +53,7 @@ x64/
 *.vspscc
 *.vssscc
 .builds
+*.nupkg
 
 # Visual Studio profiler
 *.psess
