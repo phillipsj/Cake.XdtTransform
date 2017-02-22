@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.23107.0
+VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cake.XdtTransform", "Cake.XdtTransform\Cake.XdtTransform.csproj", "{533D0E04-D306-4427-BA0E-29FAC90A6867}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cake.XdtTransform.Tests", "Cake.XdtTransform.Tests\Cake.XdtTransform.Tests.csproj", "{4124AD80-0FC1-4AB6-A9C5-314F2373560D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{533D0E04-D306-4427-BA0E-29FAC90A6867}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{533D0E04-D306-4427-BA0E-29FAC90A6867}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{533D0E04-D306-4427-BA0E-29FAC90A6867}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4124AD80-0FC1-4AB6-A9C5-314F2373560D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4124AD80-0FC1-4AB6-A9C5-314F2373560D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4124AD80-0FC1-4AB6-A9C5-314F2373560D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4124AD80-0FC1-4AB6-A9C5-314F2373560D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

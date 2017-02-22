@@ -1,0 +1,334 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="XdtTramsformation_TransformFile" xml:space="preserve">
+    <value>&lt;?xml version="1.0"?&gt;
+&lt;configuration xmlns:xdt="http://schemas.microsoft.com/XML-Document-Transform"&gt;
+    &lt;appSettings&gt;
+        &lt;add key="transformed" value="false" xdt:Transform="SetAttributes" xdt:Locator="Match(key)"/&gt;
+    &lt;/appSettings&gt;
+  &lt;system.web&gt;
+    &lt;compilation xdt:Transform="RemoveAttributes(debug)" /&gt;
+  &lt;/system.web&gt;
+&lt;/configuration&gt;</value>
+  </data>
+  <data name="XdtTransformation_SourceFile" xml:space="preserve">
+    <value>&lt;?xml version="1.0" encoding="utf-8"?&gt;
+&lt;!--
+  For more information on how to configure your ASP.NET application, please visit
+  http://go.microsoft.com/fwlink/?LinkId=301879
+  --&gt;
+&lt;configuration&gt;
+  &lt;configSections&gt;
+    &lt;!-- For more information on Entity Framework configuration, visit http://go.microsoft.com/fwlink/?LinkID=237468 --&gt;
+    &lt;section name="entityFramework" type="System.Data.Entity.Internal.ConfigFile.EntityFrameworkSection, EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" requirePermission="false" /&gt;
+  &lt;/configSections&gt;
+  &lt;connectionStrings&gt;
+    &lt;add name="DefaultConnection" connectionString="Data Source=(LocalDb)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\aspnet-WebApplication1-20160718044516.mdf;Initial Catalog=aspnet-WebApplication1-20160718044516;Integrated Security=True" providerName="System.Data.SqlClient" /&gt;
+  &lt;/connectionStrings&gt;
+  &lt;appSettings&gt;
+      &lt;add key="transformed" value="true"/&gt;
+  &lt;/appSettings&gt;
+  &lt;system.web&gt;
+    &lt;authentication mode="None" /&gt;
+    &lt;compilation debug="true" targetFramework="4.5" /&gt;
+    &lt;httpRuntime targetFramework="4.5" /&gt;
+    &lt;httpModules&gt;
+      &lt;add name="ApplicationInsightsWebTracking" type="Microsoft.ApplicationInsights.Web.ApplicationInsightsHttpModule, Microsoft.AI.Web" /&gt;
+    &lt;/httpModules&gt;
+  &lt;/system.web&gt;
+  &lt;system.webServer&gt;
+    &lt;modules&gt;
+      &lt;remove name="FormsAuthentication" /&gt;
+      &lt;remove name="ApplicationInsightsWebTracking" /&gt;
+      &lt;add name="ApplicationInsightsWebTracking" type="Microsoft.ApplicationInsights.Web.ApplicationInsightsHttpModule, Microsoft.AI.Web" preCondition="managedHandler" /&gt;
+    &lt;/modules&gt;
+    &lt;handlers&gt;
+      &lt;remove name="ExtensionlessUrlHandler-Integrated-4.0" /&gt;
+      &lt;remove name="OPTIONSVerbHandler" /&gt;
+      &lt;remove name="TRACEVerbHandler" /&gt;
+      &lt;add name="ExtensionlessUrlHandler-Integrated-4.0" path="*." verb="*" type="System.Web.Handlers.TransferRequestHandler" preCondition="integratedMode,runtimeVersionv4.0" /&gt;
+    &lt;/handlers&gt;
+    &lt;validation validateIntegratedModeConfiguration="false" /&gt;
+  &lt;/system.webServer&gt;
+  &lt;runtime&gt;
+    &lt;assemblyBinding xmlns="urn:schemas-microsoft-com:asm.v1"&gt;
+      &lt;dependentAssembly&gt;
+        &lt;assemblyIdentity name="Microsoft.Owin.Security" publicKeyToken="31bf3856ad364e35" /&gt;
+        &lt;bindingRedirect oldVersion="0.0.0.0-3.0.1.0" newVersion="3.0.1.0" /&gt;
+      &lt;/dependentAssembly&gt;
+      &lt;dependentAssembly&gt;
+        &lt;assemblyIdentity name="Microsoft.Owin.Security.OAuth" publicKeyToken="31bf3856ad364e35" /&gt;
+        &lt;bindingRedirect oldVersion="0.0.0.0-3.0.1.0" newVersion="3.0.1.0" /&gt;
+      &lt;/dependentAssembly&gt;
+      &lt;dependentAssembly&gt;
+        &lt;assemblyIdentity name="Microsoft.Owin.Security.Cookies" publicKeyToken="31bf3856ad364e35" /&gt;
+        &lt;bindingRedirect oldVersion="0.0.0.0-3.0.1.0" newVersion="3.0.1.0" /&gt;
+      &lt;/dependentAssembly&gt;
+      &lt;dependentAssembly&gt;
+        &lt;assemblyIdentity name="Microsoft.Owin" publicKeyToken="31bf3856ad364e35" /&gt;
+        &lt;bindingRedirect oldVersion="0.0.0.0-3.0.1.0" newVersion="3.0.1.0" /&gt;
+      &lt;/dependentAssembly&gt;
+      &lt;dependentAssembly&gt;
+        &lt;assemblyIdentity name="Newtonsoft.Json" culture="neutral" publicKeyToken="30ad4fe6b2a6aeed" /&gt;
+        &lt;bindingRedirect oldVersion="0.0.0.0-6.0.0.0" newVersion="6.0.0.0" /&gt;
+      &lt;/dependentAssembly&gt;
+      &lt;dependentAssembly&gt;
+        &lt;assemblyIdentity name="System.Web.Optimization" publicKeyToken="31bf3856ad364e35" /&gt;
+        &lt;bindingRedirect oldVersion="1.0.0.0-1.1.0.0" newVersion="1.1.0.0" /&gt;
+      &lt;/dependentAssembly&gt;
+      &lt;dependentAssembly&gt;
+        &lt;assemblyIdentity name="WebGrease" publicKeyToken="31bf3856ad364e35" /&gt;
+        &lt;bindingRedirect oldVersion="0.0.0.0-1.5.2.14234" newVersion="1.5.2.14234" /&gt;
+      &lt;/dependentAssembly&gt;
+      &lt;dependentAssembly&gt;
+        &lt;assemblyIdentity name="System.Web.Helpers" publicKeyToken="31bf3856ad364e35" /&gt;
+        &lt;bindingRedirect oldVersion="1.0.0.0-3.0.0.0" newVersion="3.0.0.0" /&gt;
+      &lt;/dependentAssembly&gt;
+      &lt;dependentAssembly&gt;
+        &lt;assemblyIdentity name="System.Web.Mvc" publicKeyToken="31bf3856ad364e35" /&gt;
+        &lt;bindingRedirect oldVersion="1.0.0.0-5.2.3.0" newVersion="5.2.3.0" /&gt;
+      &lt;/dependentAssembly&gt;
+      &lt;dependentAssembly&gt;
+        &lt;assemblyIdentity name="System.Web.WebPages" publicKeyToken="31bf3856ad364e35" /&gt;
+        &lt;bindingRedirect oldVersion="1.0.0.0-3.0.0.0" newVersion="3.0.0.0" /&gt;
+      &lt;/dependentAssembly&gt;
+    &lt;/assemblyBinding&gt;
+  &lt;/runtime&gt;
+  &lt;entityFramework&gt;
+    &lt;defaultConnectionFactory type="System.Data.Entity.Infrastructure.LocalDbConnectionFactory, EntityFramework"&gt;
+      &lt;parameters&gt;
+        &lt;parameter value="mssqllocaldb" /&gt;
+      &lt;/parameters&gt;
+    &lt;/defaultConnectionFactory&gt;
+    &lt;providers&gt;
+      &lt;provider invariantName="System.Data.SqlClient" type="System.Data.Entity.SqlServer.SqlProviderServices, EntityFramework.SqlServer" /&gt;
+    &lt;/providers&gt;
+  &lt;/entityFramework&gt;
+  &lt;system.codedom&gt;
+    &lt;compilers&gt;
+      &lt;compiler language="c#;cs;csharp" extension=".cs" type="Microsoft.CodeDom.Providers.DotNetCompilerPlatform.CSharpCodeProvider, Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" warningLevel="4" compilerOptions="/langversion:6 /nowarn:1659;1699;1701" /&gt;
+      &lt;compiler language="vb;vbs;visualbasic;vbscript" extension=".vb" type="Microsoft.CodeDom.Providers.DotNetCompilerPlatform.VBCodeProvider, Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" warningLevel="4" compilerOptions="/langversion:14 /nowarn:41008 /define:_MYTYPE=\&amp;quot;Web\&amp;quot; /optionInfer+" /&gt;
+    &lt;/compilers&gt;
+  &lt;/system.codedom&gt;
+&lt;/configuration&gt;</value>
+  </data>
+  <data name="XdtTransformation_TargetFile" xml:space="preserve">
+    <value>&lt;?xml version="1.0" encoding="utf-8"?&gt;
+&lt;!--
+  For more information on how to configure your ASP.NET application, please visit
+  http://go.microsoft.com/fwlink/?LinkId=301879
+  --&gt;
+&lt;configuration&gt;
+  &lt;configSections&gt;
+    &lt;!-- For more information on Entity Framework configuration, visit http://go.microsoft.com/fwlink/?LinkID=237468 --&gt;
+    &lt;section name="entityFramework" type="System.Data.Entity.Internal.ConfigFile.EntityFrameworkSection, EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" requirePermission="false" /&gt;
+  &lt;/configSections&gt;
+  &lt;connectionStrings&gt;
+    &lt;add name="DefaultConnection" connectionString="$(ReplacableToken_DefaultConnection-Web.config Connection String_0)" providerName="System.Data.SqlClient" /&gt;
+  &lt;/connectionStrings&gt;
+  &lt;appSettings&gt;
+    &lt;add key="transformed" value="false" /&gt;
+  &lt;/appSettings&gt;
+  &lt;system.web&gt;
+    &lt;authentication mode="None" /&gt;
+    &lt;compilation targetFramework="4.5" /&gt;
+    &lt;httpRuntime targetFramework="4.5" /&gt;
+    &lt;httpModules&gt;
+      &lt;add name="ApplicationInsightsWebTracking" type="Microsoft.ApplicationInsights.Web.ApplicationInsightsHttpModule, Microsoft.AI.Web" /&gt;
+    &lt;/httpModules&gt;
+  &lt;/system.web&gt;
+  &lt;system.webServer&gt;
+    &lt;modules&gt;
+      &lt;remove name="FormsAuthentication" /&gt;
+      &lt;remove name="ApplicationInsightsWebTracking" /&gt;
+      &lt;add name="ApplicationInsightsWebTracking" type="Microsoft.ApplicationInsights.Web.ApplicationInsightsHttpModule, Microsoft.AI.Web" preCondition="managedHandler" /&gt;
+    &lt;/modules&gt;
+    &lt;handlers&gt;
+      &lt;remove name="ExtensionlessUrlHandler-Integrated-4.0" /&gt;
+      &lt;remove name="OPTIONSVerbHandler" /&gt;
+      &lt;remove name="TRACEVerbHandler" /&gt;
+      &lt;add name="ExtensionlessUrlHandler-Integrated-4.0" path="*." verb="*" type="System.Web.Handlers.TransferRequestHandler" preCondition="integratedMode,runtimeVersionv4.0" /&gt;
+    &lt;/handlers&gt;
+    &lt;validation validateIntegratedModeConfiguration="false" /&gt;
+  &lt;/system.webServer&gt;
+  &lt;runtime&gt;
+    &lt;assemblyBinding xmlns="urn:schemas-microsoft-com:asm.v1"&gt;
+      &lt;dependentAssembly&gt;
+        &lt;assemblyIdentity name="Microsoft.Owin.Security" publicKeyToken="31bf3856ad364e35" /&gt;
+        &lt;bindingRedirect oldVersion="0.0.0.0-3.0.1.0" newVersion="3.0.1.0" /&gt;
+      &lt;/dependentAssembly&gt;
+      &lt;dependentAssembly&gt;
+        &lt;assemblyIdentity name="Microsoft.Owin.Security.OAuth" publicKeyToken="31bf3856ad364e35" /&gt;
+        &lt;bindingRedirect oldVersion="0.0.0.0-3.0.1.0" newVersion="3.0.1.0" /&gt;
+      &lt;/dependentAssembly&gt;
+      &lt;dependentAssembly&gt;
+        &lt;assemblyIdentity name="Microsoft.Owin.Security.Cookies" publicKeyToken="31bf3856ad364e35" /&gt;
+        &lt;bindingRedirect oldVersion="0.0.0.0-3.0.1.0" newVersion="3.0.1.0" /&gt;
+      &lt;/dependentAssembly&gt;
+      &lt;dependentAssembly&gt;
+        &lt;assemblyIdentity name="Microsoft.Owin" publicKeyToken="31bf3856ad364e35" /&gt;
+        &lt;bindingRedirect oldVersion="0.0.0.0-3.0.1.0" newVersion="3.0.1.0" /&gt;
+      &lt;/dependentAssembly&gt;
+      &lt;dependentAssembly&gt;
+        &lt;assemblyIdentity name="Newtonsoft.Json" culture="neutral" publicKeyToken="30ad4fe6b2a6aeed" /&gt;
+        &lt;bindingRedirect oldVersion="0.0.0.0-6.0.0.0" newVersion="6.0.0.0" /&gt;
+      &lt;/dependentAssembly&gt;
+      &lt;dependentAssembly&gt;
+        &lt;assemblyIdentity name="System.Web.Optimization" publicKeyToken="31bf3856ad364e35" /&gt;
+        &lt;bindingRedirect oldVersion="1.0.0.0-1.1.0.0" newVersion="1.1.0.0" /&gt;
+      &lt;/dependentAssembly&gt;
+      &lt;dependentAssembly&gt;
+        &lt;assemblyIdentity name="WebGrease" publicKeyToken="31bf3856ad364e35" /&gt;
+        &lt;bindingRedirect oldVersion="0.0.0.0-1.5.2.14234" newVersion="1.5.2.14234" /&gt;
+      &lt;/dependentAssembly&gt;
+      &lt;dependentAssembly&gt;
+        &lt;assemblyIdentity name="System.Web.Helpers" publicKeyToken="31bf3856ad364e35" /&gt;
+        &lt;bindingRedirect oldVersion="1.0.0.0-3.0.0.0" newVersion="3.0.0.0" /&gt;
+      &lt;/dependentAssembly&gt;
+      &lt;dependentAssembly&gt;
+        &lt;assemblyIdentity name="System.Web.Mvc" publicKeyToken="31bf3856ad364e35" /&gt;
+        &lt;bindingRedirect oldVersion="1.0.0.0-5.2.3.0" newVersion="5.2.3.0" /&gt;
+      &lt;/dependentAssembly&gt;
+      &lt;dependentAssembly&gt;
+        &lt;assemblyIdentity name="System.Web.WebPages" publicKeyToken="31bf3856ad364e35" /&gt;
+        &lt;bindingRedirect oldVersion="1.0.0.0-3.0.0.0" newVersion="3.0.0.0" /&gt;
+      &lt;/dependentAssembly&gt;
+    &lt;/assemblyBinding&gt;
+  &lt;/runtime&gt;
+  &lt;entityFramework&gt;
+    &lt;defaultConnectionFactory type="System.Data.Entity.Infrastructure.LocalDbConnectionFactory, EntityFramework"&gt;
+      &lt;parameters&gt;
+        &lt;parameter value="mssqllocaldb" /&gt;
+      &lt;/parameters&gt;
+    &lt;/defaultConnectionFactory&gt;
+    &lt;providers&gt;
+      &lt;provider invariantName="System.Data.SqlClient" type="System.Data.Entity.SqlServer.SqlProviderServices, EntityFramework.SqlServer" /&gt;
+    &lt;/providers&gt;
+  &lt;/entityFramework&gt;
+  &lt;system.codedom&gt;
+    &lt;compilers&gt;
+      &lt;compiler language="c#;cs;csharp" extension=".cs" type="Microsoft.CodeDom.Providers.DotNetCompilerPlatform.CSharpCodeProvider, Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" warningLevel="4" compilerOptions="/langversion:6 /nowarn:1659;1699;1701" /&gt;
+      &lt;compiler language="vb;vbs;visualbasic;vbscript" extension=".vb" type="Microsoft.CodeDom.Providers.DotNetCompilerPlatform.VBCodeProvider, Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" warningLevel="4" compilerOptions="/langversion:14 /nowarn:41008 /define:_MYTYPE=\&amp;quot;Web\&amp;quot; /optionInfer+" /&gt;
+    &lt;/compilers&gt;
+  &lt;/system.codedom&gt;
+&lt;/configuration&gt;
+&lt;!--ProjectGuid: 28591C5B-D9AF-4711-A816-DBEBB12A58FD--&gt;</value>
+  </data>
+</root>

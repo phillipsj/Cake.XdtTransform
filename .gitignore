@@ -13,6 +13,7 @@ tools/Cake/
 tools/xunit.runners/
 tools/xunit.runner.console/
 tools/nuget.exe
+tools/
 
 # mstest test results
 TestResults
@@ -27,6 +28,7 @@ TestResults
 *.userprefs
 *.GhostDoc.xml
 *StyleCop.Cache
+*.sln.DotSettings
 
 # Build results
 [Dd]ebug/
@@ -51,6 +53,7 @@ x64/
 *.vspscc
 *.vssscc
 .builds
+*.nupkg
 
 # Visual Studio profiler
 *.psess
