@@ -6,9 +6,9 @@ BuildParameters.SetParameters(context: Context,
                             buildSystem: BuildSystem,
                             sourceDirectoryPath: "./src",
                             title: "Cake.XdtTransform",
-                            repositoryOwner: "phillipsj",
+                            repositoryOwner: "cake-contrib",
                             repositoryName: "Cake.XdtTransform",
-                            appVeyorAccountName: "phillipsj");
+                            appVeyorAccountName: "cakecontrib");
 
 BuildParameters.PrintParameters(Context);
 
