@@ -6,8 +6,9 @@
     <title>Cake.XdtTransform</title>
     <authors>Jamie Phillips</authors>
     <owners>Jamie Phillips</owners>
-    <licenseUrl>https://github.com/phillipsj/Cake.XdtTransform</licenseUrl>
-    <projectUrl>https://github.com/phillipsj/Cake.XdtTransform</projectUrl>
+    <licenseUrl>https://github.com/cake-contrib/Cake.XdtTransform</licenseUrl>
+    <projectUrl>https://github.com/cake-contrib/Cake.XdtTransform</projectUrl>
+    <iconUrl>https://cdn.rawgit.com/cake-contrib/graphics/a5cf0f881c390650144b2243ae551d5b9f836196/png/cake-contrib-medium.png</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>Helper to perform XDT based config file transforms.</description>
     <releaseNotes>Initial Release</releaseNotes>
