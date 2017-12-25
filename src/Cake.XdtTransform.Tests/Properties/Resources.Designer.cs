@@ -65,6 +65,7 @@ namespace Cake.XdtTransform.Tests.Properties {
         ///&lt;configuration xmlns:xdt=&quot;http://schemas.microsoft.com/XML-Document-Transform&quot;&gt;
         ///    &lt;appSettings&gt;
         ///        &lt;add key=&quot;transformed&quot; value=&quot;false&quot; xdt:Transform=&quot;SetAttributes&quot; xdt:Locator=&quot;Match(key)&quot;/&gt;
+        ///	&lt;add key=&quot;this-is-missing&quot; value=&quot;false&quot; xdt:Transform=&quot;SetAttributes&quot; xdt:Locator=&quot;Match(key)&quot;/&gt;
         ///    &lt;/appSettings&gt;
         ///  &lt;system.web&gt;
         ///    &lt;compilation xdt:Transform=&quot;RemoveAttributes(debug)&quot; /&gt;
