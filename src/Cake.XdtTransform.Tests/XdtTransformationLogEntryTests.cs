@@ -49,8 +49,9 @@ namespace Cake.XdtTransform.Tests
                 stringRepresentation = item.ToString();              
             });
 
-            stringRepresentation.ShouldStartWith(@"[02/01/2000 03:04:05] [MessageType:Type] [MessageVerbosityType:Verbose] [File:File] [LineNumber:10] [LinePosition:20] Exception: System.Exception: Exception was thrown.
-   at Cake.XdtTransform.Tests.XdtTransformationLogEntryTests.ForFullItemToStringIsMaximum() in ");
+            stringRepresentation.ShouldStartWith(@"[02/01/2000 03:04:05] [MessageType:Type] [MessageVerbosityType:Verbose] [File:File] [LineNumber:10] [LinePosition:20] Exception: System.Exception: Exception was thrown.");
+
+            stringRepresentation.ShouldContain("at Cake.XdtTransform.Tests.XdtTransformationLogEntryTests.ForFullItemToStringIsMaximum() in ");
 
             stringRepresentation.ShouldContain("Message arg0 30");
         }
