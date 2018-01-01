@@ -50,7 +50,7 @@ namespace Cake.XdtTransform.Tests
             });
 
             stringRepresentation.ShouldStartWith(@"[02/01/2000 03:04:05] [MessageType:Type] [MessageVerbosityType:Verbose] [File:File] [LineNumber:10] [LinePosition:20] Exception: System.Exception: Exception was thrown.
-   at Cake.XdtTransform.Tests.XdtTransformationLogEntryTests.ForFullItemToStringIsMaximum() in C:\Github\Cake.XdtTransform\src\Cake.XdtTransform.Tests\XdtTransformationLogEntryTests.cs:line");
+   at Cake.XdtTransform.Tests.XdtTransformationLogEntryTests.ForFullItemToStringIsMaximum() in ");
 
             stringRepresentation.ShouldContain("Message arg0 30");
         }
