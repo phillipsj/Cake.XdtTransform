@@ -1,13 +1,11 @@
 ﻿using Microsoft.Web.XmlTransform;
 using System;
 
-namespace Cake.XdtTransform
-{
+namespace Cake.XdtTransform {
     /// <summary>
     /// Entry from <see cref="XdtTransformationLogEntry"/>  
     /// </summary>
-    public class XdtTransformationLogEntry
-    {
+    public class XdtTransformationLogEntry {
         /// <summary>
         /// Time of entry 
         /// </summary>
@@ -56,27 +54,22 @@ namespace Cake.XdtTransform
         /// <summary>
         /// Outputs all available information as a string
         /// </summary>
-        public override string ToString()
-        {
+        public override string ToString() {
             return $"[{Timestamp}] "
-                + FormatOrEmptyString(MessageType, () => $"[MessageType:{MessageType}] ")
-                + FormatOrEmptyString(MessageVerbosityType, () => $"[MessageVerbosityType:{MessageVerbosityType}] ")
-                + FormatOrEmptyString(File, () => $"[File:{File}] ")               
-                + FormatOrEmptyString(LineNumber, () => $"[LineNumber:{LineNumber}] ")
-                + FormatOrEmptyString(LinePosition, () => $"[LinePosition:{LinePosition}] ")
-                + FormatOrEmptyString(Exception, () => $"Exception: {Exception.ToString()} ")
-                + FormatOrEmptyString(Message, () => string.Format(Message, MessageArgs));
+                   + FormatOrEmptyString(MessageType, () => $"[MessageType:{MessageType}] ")
+                   + FormatOrEmptyString(MessageVerbosityType, () => $"[MessageVerbosityType:{MessageVerbosityType}] ")
+                   + FormatOrEmptyString(File, () => $"[File:{File}] ")
+                   + FormatOrEmptyString(LineNumber, () => $"[LineNumber:{LineNumber}] ")
+                   + FormatOrEmptyString(LinePosition, () => $"[LinePosition:{LinePosition}] ")
+                   + FormatOrEmptyString(Exception, () => $"Exception: {Exception.ToString()} ")
+                   + FormatOrEmptyString(Message, () => string.Format(Message, MessageArgs));
         }
 
-        private static string FormatOrEmptyString<T>(T item, Func<string> format)
-        {
-            if(item == null)
-            {
+        private static string FormatOrEmptyString<T>(T item, Func<string> format) {
+            if (item == null) {
                 return "";
             }
-
             return format();
         }
-
     }
 }
