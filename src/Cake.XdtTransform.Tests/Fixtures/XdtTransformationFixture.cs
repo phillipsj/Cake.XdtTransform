@@ -49,5 +49,9 @@ namespace Cake.XdtTransform.Tests.Fixtures
         public void TransformConfig() {
             XdtTransformation.TransformConfig(FileSystem, SourceFile, TransformFile, TargetFile);
         }
+
+        public XdtTransformationLog TransformConfigWithDefaultLogger() {
+            return XdtTransformation.TransformConfigWithDefaultLogger(FileSystem, SourceFile, TransformFile, TargetFile);
+        }
     }
 }

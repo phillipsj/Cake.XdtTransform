@@ -1,8 +1,8 @@
 ﻿using System;
 using System.IO;
+using Microsoft.Web.XmlTransform;
 using Cake.Core;
 using Cake.Core.IO;
-using Microsoft.Web.XmlTransform;
 
 namespace Cake.XdtTransform {
     /// <summary>
@@ -31,15 +31,31 @@ namespace Cake.XdtTransform {
             }
         }
 
-
         /// <summary>
-        /// Transforms config file.
+        /// Transforms config file and returns transformation log.
         /// </summary>
         /// <param name="fileSystem">The filesystem.</param>
         /// <param name="sourceFile">Source config file.</param>
         /// <param name="transformFile">Tranformation to apply.</param>
         /// <param name="targetFile">Target config file.</param>
-        public static void TransformConfig(IFileSystem fileSystem, FilePath sourceFile, FilePath transformFile, FilePath targetFile) {
+        public static XdtTransformationLog TransformConfigWithDefaultLogger(IFileSystem fileSystem, FilePath sourceFile, FilePath transformFile, FilePath targetFile)
+        {
+            var log = new XdtTransformationLog();
+
+            TransformConfig(fileSystem, sourceFile, transformFile, targetFile, log);
+
+            return log;
+        }
+
+            /// <summary>
+            /// Transforms config file.
+            /// </summary>
+            /// <param name="fileSystem">The filesystem.</param>
+            /// <param name="sourceFile">Source config file.</param>
+            /// <param name="transformFile">Tranformation to apply.</param>
+            /// <param name="targetFile">Target config file.</param>
+            /// <param name="logger">Logger for the transfomration process</param>
+            public static void TransformConfig(IFileSystem fileSystem, FilePath sourceFile, FilePath transformFile, FilePath targetFile, IXmlTransformationLogger logger = null) {
             if (fileSystem == null) {
                 throw new ArgumentNullException(nameof(fileSystem), "File system is null.");
             }
@@ -55,7 +71,7 @@ namespace Cake.XdtTransform {
                 transformStream = transformConfigFile.OpenRead(),
                 targetStream = targetConfigFile.OpenWrite())
             using (var document = new XmlTransformableDocument { PreserveWhitespace = true })
-            using (var transform = new XmlTransformation(transformStream, null))
+            using (var transform = new XmlTransformation(transformStream, logger))
             {
                 document.Load(sourceStream);
 

@@ -122,6 +122,7 @@
 &lt;configuration xmlns:xdt="http://schemas.microsoft.com/XML-Document-Transform"&gt;
     &lt;appSettings&gt;
         &lt;add key="transformed" value="false" xdt:Transform="SetAttributes" xdt:Locator="Match(key)"/&gt;
+	&lt;add key="this-is-missing" value="false" xdt:Transform="SetAttributes" xdt:Locator="Match(key)"/&gt;
     &lt;/appSettings&gt;
   &lt;system.web&gt;
     &lt;compilation xdt:Transform="RemoveAttributes(debug)" /&gt;
