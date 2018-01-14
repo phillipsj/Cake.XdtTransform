@@ -53,6 +53,8 @@
     <Compile Include="XdtTransformation.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="XdtTransformationAlias.cs" />
+    <Compile Include="XdtTransformationLog.cs" />
+    <Compile Include="XdtTransformationLogEntry.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

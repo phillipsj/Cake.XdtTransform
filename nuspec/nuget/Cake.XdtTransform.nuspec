@@ -16,9 +16,9 @@
     <tags>Cake Transform Config XDT</tags>
   </metadata>
   <files>
-    <file src="Cake.XdtTransform.dll" target="lib/net45" />
-    <file src="Cake.XdtTransform.xml" target="lib/net45" />
-    <file src="Cake.XdtTransform.pdb" target="lib/net45" />
+    <file src="Cake.XdtTransform.dll" target="lib/net46" />
+    <file src="Cake.XdtTransform.xml" target="lib/net46" />
+    <file src="Cake.XdtTransform.pdb" target="lib/net46" />
     <file src="Microsoft.Web.XmlTransform.dll" target="lib/net45" />
   </files>
 </package>
