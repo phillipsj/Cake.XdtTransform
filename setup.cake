@@ -8,7 +8,9 @@ BuildParameters.SetParameters(context: Context,
                             title: "Cake.XdtTransform",
                             repositoryOwner: "cake-contrib",
                             repositoryName: "Cake.XdtTransform",
-                            appVeyorAccountName: "cakecontrib");
+                            appVeyorAccountName: "cakecontrib",
+                            shouldRunDupFinder: false,
+                            shouldRunInspectCode: false);
 
 BuildParameters.PrintParameters(Context);
 
