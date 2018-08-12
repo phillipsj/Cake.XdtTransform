@@ -15,6 +15,7 @@ BuildParameters.SetParameters(context: Context,
 BuildParameters.PrintParameters(Context);
 
 ToolSettings.SetToolSettings(context: Context,
+                            buildMSBuildToolVersion : MSBuildToolVersion.VS2017,
                             dupFinderExcludePattern: new string[] { 
                                 BuildParameters.RootDirectoryPath + "/src/Cake.XdtTransform.Tests/*.cs" },
                             testCoverageFilter: "+[*]* -[xunit.*]* -[Cake.Core]* -[Cake.Testing]* -[*.Tests]* ",
