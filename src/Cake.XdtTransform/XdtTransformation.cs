@@ -1,8 +1,8 @@
 ﻿using System;
 using System.IO;
-using Microsoft.Web.XmlTransform;
 using Cake.Core;
 using Cake.Core.IO;
+using DotNet.Xdt;
 
 namespace Cake.XdtTransform {
     /// <summary>

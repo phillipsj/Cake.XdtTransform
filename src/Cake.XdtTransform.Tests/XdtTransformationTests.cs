@@ -3,11 +3,12 @@ using System.IO;
 using System.Text;
 using Cake.Core.IO;
 using Cake.XdtTransform.Tests.Fixtures;
-using Should;
-using Should.Core.Assertions;
+using FluentAssertions;
+using Xunit;
 
 namespace Cake.XdtTransform.Tests {
     public sealed class XdtTransformationTests {
+        [Fact]
         public void ShouldErrorIfSourceFileIsNull() {
             // Given
             var fixture = new XdtTransformationFixture {SourceFile = null};
@@ -16,9 +17,10 @@ namespace Cake.XdtTransform.Tests {
             var result = Record.Exception(() => fixture.TransformConfig());
 
             // Then
-            result.ShouldBeType<ArgumentNullException>().ParamName.ShouldEqual("sourceFile");
+            result.Should().BeOfType<ArgumentNullException>().Subject.ParamName.Should().Equals("sourceFile");
         }
 
+        [Fact]
         public void ShouldErrorIfTransformFileIsNull() {
             // Given
             var fixture = new XdtTransformationFixture {TransformFile = null};
@@ -27,9 +29,10 @@ namespace Cake.XdtTransform.Tests {
             var result = Record.Exception(() => fixture.TransformConfig());
 
             // Then
-            result.ShouldBeType<ArgumentNullException>().ParamName.ShouldEqual("transformFile");
+            result.Should().BeOfType<ArgumentNullException>().Subject.ParamName.Should().Equals("transformFile");
         }
 
+        [Fact]
         public void ShouldErrorIfTargetFileIsNull() {
             // Given
             var fixture = new XdtTransformationFixture {TargetFile = null};
@@ -38,9 +41,10 @@ namespace Cake.XdtTransform.Tests {
             var result = Record.Exception(() => fixture.TransformConfig());
 
             // Then
-            result.ShouldBeType<ArgumentNullException>().ParamName.ShouldEqual("targetFile");
+            result.Should().BeOfType<ArgumentNullException>().Subject.ParamName.Should().Equals("targetFile");
         }
 
+        [Fact]
         public void ShouldErrorIfSourceFileNotExists() {
             // Given
             var fixture = new XdtTransformationFixture(sourceFileExists: false) {
@@ -51,9 +55,10 @@ namespace Cake.XdtTransform.Tests {
             var result = Record.Exception(() => fixture.TransformConfig());
 
             // Then
-            result.ShouldBeType<FileNotFoundException>().Message.ShouldContain("Unable to find the specified file.");
+            result.Should().BeOfType<FileNotFoundException>().Subject.Message.Should().Contain("Unable to find the specified file.");
         }
 
+        [Fact]
         public void ShouldErrorIfTransformFileNotExists() {
             // Given
             var fixture = new XdtTransformationFixture(transformFileExists: false) {
@@ -64,9 +69,10 @@ namespace Cake.XdtTransform.Tests {
             var result = Record.Exception(() => fixture.TransformConfig());
 
             // Then
-            result.ShouldBeType<FileNotFoundException>().Message.ShouldContain("Unable to find the specified file.");
+            result.Should().BeOfType<FileNotFoundException>().Subject.Message.Should().Contain("Unable to find the specified file.");
         }
 
+        [Fact]
         public void ShouldTransformFile() {
             // Given
             var fixture = new XdtTransformationFixture {
@@ -78,16 +84,17 @@ namespace Cake.XdtTransform.Tests {
 
             // Then
             var transformedFile = fixture.FileSystem.GetFile(fixture.TargetFile);
-            transformedFile.Exists.ShouldEqual(true);
+            transformedFile.Exists.Should().BeTrue();
             string transformedString;
             using (var transformedStream = transformedFile.OpenRead()) {
                 using (var streamReader = new StreamReader(transformedStream, Encoding.UTF8)) {
                     transformedString = streamReader.ReadToEnd();
                 }
             }
-            transformedString.ShouldContain("<add key=\"transformed\" value=\"false\"/>");
+            transformedString.Should().Contain("<add key=\"transformed\" value=\"false\"/>");
         }
 
+        [Fact]
         public void ShouldTransformFileWithDefaultLogger()
         {
             // Given
@@ -101,7 +108,7 @@ namespace Cake.XdtTransform.Tests {
 
             // Then
             var transformedFile = fixture.FileSystem.GetFile(fixture.TargetFile);
-            transformedFile.Exists.ShouldEqual(true);
+            transformedFile.Exists.Should().BeTrue();
             string transformedString;
             using (var transformedStream = transformedFile.OpenRead())
             {
@@ -110,13 +117,13 @@ namespace Cake.XdtTransform.Tests {
                     transformedString = streamReader.ReadToEnd();
                 }
             }
-            transformedString.ShouldContain("<add key=\"transformed\" value=\"false\"/>");
-            transformedString.ShouldNotContain("this-is-missing");
+            transformedString.Should().Contain("<add key=\"transformed\" value=\"false\"/>");
+            transformedString.Should().NotContain("this-is-missing");
 
-            log.HasError.ShouldBeFalse();
-            log.HasException.ShouldBeFalse();
-            log.HasWarning.ShouldBeTrue();
-            log.Log.Count.ShouldEqual(15);
+            log.HasError.Should().BeFalse();
+            log.HasException.Should().BeFalse();
+            log.HasWarning.Should().BeTrue();
+            log.Log.Count.Should().Equals(15);
         }
     }
 }
