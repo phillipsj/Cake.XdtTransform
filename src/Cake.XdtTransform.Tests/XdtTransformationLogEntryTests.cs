@@ -1,10 +1,12 @@
 ﻿using System;
-using Microsoft.Web.XmlTransform;
 using Cake.XdtTransform.Tests.Util;
-using Should;
+using DotNet.Xdt;
+using FluentAssertions;
+using Xunit;
 
 namespace Cake.XdtTransform.Tests {
     public sealed class XdtTransformationLogEntryTests {
+        [Fact]
         public void ForEmptyItemToStringIsMinimum() {
             var stringRepresentation = "";
             var item = new XdtTransformationLogEntry();
@@ -12,9 +14,10 @@ namespace Cake.XdtTransform.Tests {
 
             CultureUtil.UseGBCulture(() => { stringRepresentation = item.ToString(); });
 
-            stringRepresentation.ShouldEqual("[02/01/2000 03:04:05] ");
+            stringRepresentation.Should().Equals("[02/01/2000 03:04:05] ");
         }
 
+        [Fact]
         public void ForFullItemToStringIsMaximum() {
             var item = new XdtTransformationLogEntry();
             item.File = "File";
@@ -37,11 +40,11 @@ namespace Cake.XdtTransform.Tests {
 
             CultureUtil.UseGBCulture(() => { stringRepresentation = item.ToString(); });
 
-            stringRepresentation.ShouldStartWith(@"[02/01/2000 03:04:05] [MessageType:Type] [MessageVerbosityType:Verbose] [File:File] [LineNumber:10] [LinePosition:20] Exception: System.Exception: Exception was thrown.");
+            stringRepresentation.Should().StartWith(@"[02/01/2000 03:04:05] [MessageType:Type] [MessageVerbosityType:Verbose] [File:File] [LineNumber:10] [LinePosition:20] Exception: System.Exception: Exception was thrown.");
 
-            stringRepresentation.ShouldContain("at Cake.XdtTransform.Tests.XdtTransformationLogEntryTests.ForFullItemToStringIsMaximum() in ");
+            stringRepresentation.Should().Contain("at Cake.XdtTransform.Tests.XdtTransformationLogEntryTests.ForFullItemToStringIsMaximum() in ");
 
-            stringRepresentation.ShouldContain("Message arg0 30");
+            stringRepresentation.Should().Contain("Message arg0 30");
         }
     }
 }

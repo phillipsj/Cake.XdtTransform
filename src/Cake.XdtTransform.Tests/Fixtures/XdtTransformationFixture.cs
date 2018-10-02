@@ -1,14 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Cake.Core.IO;
+﻿using Cake.Core.IO;
 using Cake.Testing;
 using Cake.XdtTransform.Tests.Properties;
 
-namespace Cake.XdtTransform.Tests.Fixtures
-{
+namespace Cake.XdtTransform.Tests.Fixtures {
     internal sealed class XdtTransformationFixture
     {
         public IFileSystem FileSystem { get; set; }

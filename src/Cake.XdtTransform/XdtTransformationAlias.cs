@@ -1,5 +1,5 @@
 ﻿using System;
-using Microsoft.Web.XmlTransform;
+using DotNet.Xdt;
 using Cake.Core;
 using Cake.Core.Annotations;
 using Cake.Core.IO;
