@@ -256,3 +256,5 @@ tools/*
 !tools/packages.config
 BuildArtifacts
 
+
+src/Cake\.XdtTransform/Cake\.XdtTransform\.xml

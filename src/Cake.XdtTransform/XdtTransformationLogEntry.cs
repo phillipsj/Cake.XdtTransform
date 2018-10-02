@@ -1,4 +1,4 @@
-﻿using Microsoft.Web.XmlTransform;
+﻿using DotNet.Xdt;
 using System;
 
 namespace Cake.XdtTransform {
@@ -12,7 +12,7 @@ namespace Cake.XdtTransform {
         public DateTime Timestamp { get; set; } = DateTime.Now;
 
         /// <summary>
-        ///  <see cref="Microsoft.Web.XmlTransform.MessageType"/> if supplied, depicts verbosity
+        ///  <see cref="DotNet.Xdt.MessageType"/> if supplied, depicts verbosity
         /// </summary>
         public MessageType? MessageVerbosityType { get; set; }
 
