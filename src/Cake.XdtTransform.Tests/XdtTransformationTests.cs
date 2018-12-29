@@ -1,7 +1,5 @@
 ﻿using System;
 using System.IO;
-using System.Text;
-using Cake.Core.IO;
 using Cake.XdtTransform.Tests.Fixtures;
 using FluentAssertions;
 using Xunit;
@@ -83,40 +81,22 @@ namespace Cake.XdtTransform.Tests {
             fixture.TransformConfig();
 
             // Then
-            var transformedFile = fixture.FileSystem.GetFile(fixture.TargetFile);
-            transformedFile.Exists.Should().BeTrue();
-            string transformedString;
-            using (var transformedStream = transformedFile.OpenRead()) {
-                using (var streamReader = new StreamReader(transformedStream, Encoding.UTF8)) {
-                    transformedString = streamReader.ReadToEnd();
-                }
-            }
+            var transformedString = fixture.GetTargetFileContent();
             transformedString.Should().Contain("<add key=\"transformed\" value=\"false\"/>");
         }
 
         [Fact]
-        public void ShouldTransformFileWithDefaultLogger()
-        {
+        public void ShouldTransformFileWithDefaultLogger() {
             // Given
-            var fixture = new XdtTransformationFixture
-            {
+            var fixture = new XdtTransformationFixture {
                 TargetFile = "/Working/transformed.config"
             };
 
             // When
-            var  log = fixture.TransformConfigWithDefaultLogger();
+            var log = fixture.TransformConfigWithDefaultLogger();
 
             // Then
-            var transformedFile = fixture.FileSystem.GetFile(fixture.TargetFile);
-            transformedFile.Exists.Should().BeTrue();
-            string transformedString;
-            using (var transformedStream = transformedFile.OpenRead())
-            {
-                using (var streamReader = new StreamReader(transformedStream, Encoding.UTF8))
-                {
-                    transformedString = streamReader.ReadToEnd();
-                }
-            }
+            var transformedString = fixture.GetTargetFileContent();
             transformedString.Should().Contain("<add key=\"transformed\" value=\"false\"/>");
             transformedString.Should().NotContain("this-is-missing");
 
@@ -124,6 +104,20 @@ namespace Cake.XdtTransform.Tests {
             log.HasException.Should().BeFalse();
             log.HasWarning.Should().BeTrue();
             log.Log.Count.Should().Equals(15);
+        }
+
+        [Fact]
+        public void ShouldTransformFileWithDefaultLoggerIfSameSourceAndTarget() {
+            // Given
+            var fixture = new XdtTransformationFixture();
+            fixture.TargetFile = fixture.SourceFile;
+
+            // When
+            fixture.TransformConfigWithDefaultLogger();
+
+            // Then
+            var transformedString = fixture.GetTargetFileContent();
+            transformedString.Should().Contain("<add key=\"transformed\" value=\"false\"/>");
         }
     }
 }
