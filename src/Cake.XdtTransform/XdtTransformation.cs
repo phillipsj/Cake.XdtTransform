@@ -1,5 +1,4 @@
 ﻿using System;
-using System.IO;
 using Cake.Core;
 using Cake.Core.IO;
 using DotNet.Xdt;
@@ -38,8 +37,7 @@ namespace Cake.XdtTransform {
         /// <param name="sourceFile">Source config file.</param>
         /// <param name="transformFile">Tranformation to apply.</param>
         /// <param name="targetFile">Target config file.</param>
-        public static XdtTransformationLog TransformConfigWithDefaultLogger(IFileSystem fileSystem, FilePath sourceFile, FilePath transformFile, FilePath targetFile)
-        {
+        public static XdtTransformationLog TransformConfigWithDefaultLogger(IFileSystem fileSystem, FilePath sourceFile, FilePath transformFile, FilePath targetFile) {
             var log = new XdtTransformationLog();
 
             TransformConfig(fileSystem, sourceFile, transformFile, targetFile, log);
@@ -47,15 +45,15 @@ namespace Cake.XdtTransform {
             return log;
         }
 
-            /// <summary>
-            /// Transforms config file.
-            /// </summary>
-            /// <param name="fileSystem">The filesystem.</param>
-            /// <param name="sourceFile">Source config file.</param>
-            /// <param name="transformFile">Tranformation to apply.</param>
-            /// <param name="targetFile">Target config file.</param>
-            /// <param name="logger">Logger for the transfomration process</param>
-            public static void TransformConfig(IFileSystem fileSystem, FilePath sourceFile, FilePath transformFile, FilePath targetFile, IXmlTransformationLogger logger = null) {
+        /// <summary>
+        /// Transforms config file.
+        /// </summary>
+        /// <param name="fileSystem">The filesystem.</param>
+        /// <param name="sourceFile">Source config file.</param>
+        /// <param name="transformFile">Tranformation to apply.</param>
+        /// <param name="targetFile">Target config file.</param>
+        /// <param name="logger">Logger for the transfomration process.</param>
+        public static void TransformConfig(IFileSystem fileSystem, FilePath sourceFile, FilePath transformFile, FilePath targetFile, IXmlTransformationLogger logger = null) {
             if (fileSystem == null) {
                 throw new ArgumentNullException(nameof(fileSystem), "File system is null.");
             }
@@ -65,24 +63,24 @@ namespace Cake.XdtTransform {
                sourceConfigFile = fileSystem.GetFile(sourceFile),
                transformConfigFile = fileSystem.GetFile(transformFile),
                targetConfigFile = fileSystem.GetFile(targetFile);
-            
-            using (Stream
-                sourceStream = sourceConfigFile.OpenRead(),
-                transformStream = transformConfigFile.OpenRead(),
-                targetStream = targetConfigFile.OpenWrite())
-            using (var document = new XmlTransformableDocument { PreserveWhitespace = true })
-            using (var transform = new XmlTransformation(transformStream, logger))
-            {
-                document.Load(sourceStream);
 
-                if (!transform.Apply(document))
-                {
-                    throw new CakeException(
-                        $"Failed to transform \"{sourceFile}\" using \"{transformFile}\" to \"{targetFile}\""
-                        );
+            using (var document = new XmlTransformableDocument {PreserveWhitespace = true}) {
+                using (var sourceStream = sourceConfigFile.OpenRead()) {
+                    document.Load(sourceStream);
                 }
 
-                document.Save(targetStream);
+                using (var transformStream = transformConfigFile.OpenRead())
+                using (var transform = new XmlTransformation(transformStream, logger)) {
+                    if (!transform.Apply(document)) {
+                        throw new CakeException(
+                            $"Failed to transform \"{sourceFile}\" using \"{transformFile}\" to \"{targetFile}\""
+                            );
+                    }
+                }
+
+                using (var targetStream = targetConfigFile.OpenWrite()) {
+                    document.Save(targetStream);
+                }
             }
         }
 

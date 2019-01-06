@@ -5,11 +5,11 @@
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
-    <DocumentationFile>C:\Users\cphil\code\Cake.XdtTransform\src\Cake.XdtTransform\Cake.XdtTransform.xml</DocumentationFile>
+    <DocumentationFile>Cake.XdtTransform.xml</DocumentationFile>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <DocumentationFile>C:\Users\cphil\code\Cake.XdtTransform\src\Cake.XdtTransform\Cake.XdtTransform.xml</DocumentationFile>
+    <DocumentationFile>Cake.XdtTransform.xml</DocumentationFile>
   </PropertyGroup>
 
   <ItemGroup>
