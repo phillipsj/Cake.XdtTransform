@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
@@ -14,16 +14,14 @@
 
   <ItemGroup>
     <PackageReference Include="Cake.Core" Version="0.33.0" PrivateAssets="All" />
-    <PackageReference Include="DotNet.Xdt" Version="2.1.0">
+    <PackageReference Include="DotNet.Xdt" Version="2.1.1">
        <CopyToOutputDirectory>lib/netstandard2.0/DotNet.Xdt.dll</CopyToOutputDirectory>
     </PackageReference>
   </ItemGroup>
 
   <Target Name="CopyPackages" AfterTargets="Build">
     <ItemGroup>
-      <PackageReferenceFiles
-        Condition="%(PackageReference.CopyToOutputDirectory) != ''"
-        Include="$(NugetPackageRoot)\dotnet.xdt\%(PackageReference.Version)\%(PackageReference.CopyToOutputDirectory)" />
+      <PackageReferenceFiles Condition="%(PackageReference.CopyToOutputDirectory) != ''" Include="$(NugetPackageRoot)\dotnet.xdt\%(PackageReference.Version)\%(PackageReference.CopyToOutputDirectory)" />
     </ItemGroup>
     <Copy SourceFiles="@(PackageReferenceFiles)" DestinationFolder="$(OutDir)" />
   </Target>
