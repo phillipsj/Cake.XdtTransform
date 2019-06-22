@@ -18,10 +18,12 @@
        <CopyToOutputDirectory>lib/netstandard2.0/DotNet.Xdt.dll</CopyToOutputDirectory>
     </PackageReference>
   </ItemGroup>
-  
+
   <Target Name="CopyPackages" AfterTargets="Build">
     <ItemGroup>
-      <PackageReferenceFiles Condition="%(PackageReference.CopyToOutputDirectory) != ''" Include="$(NugetPackageRoot)\dotnet.xdt\%(PackageReference.Version)\%(PackageReference.CopyToOutputDirectory)" />
+      <PackageReferenceFiles
+        Condition="%(PackageReference.CopyToOutputDirectory) != ''"
+        Include="$(NugetPackageRoot)\dotnet.xdt\%(PackageReference.Version)\%(PackageReference.CopyToOutputDirectory)" />
     </ItemGroup>
     <Copy SourceFiles="@(PackageReferenceFiles)" DestinationFolder="$(OutDir)" />
   </Target>
