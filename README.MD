@@ -1,7 +1,7 @@
 # Cake.XdtTransform
 
-This was adapted from an [open issue](https://github.com/cake-build/cake/issues/321) on Github that shows 
-how to perform an XDT config transform. The issue is still open, but I didn't there would need to be an 
+This was adapted from an [open issue](https://github.com/cake-build/cake/issues/321) on Github that shows
+how to perform an XDT config transform. The issue is still open, but I didn't there would need to be an
 extra dependency pulled in unless you really needed it and that is why it is still open.
 
 ## Support
@@ -11,7 +11,7 @@ If you would like to support this project, there are several opportunities. Pull
 ## Usage
 
 ```csharp
-#addin Cake.XdtTransform
+#addin nuget:?package=Cake.XdtTransform&version=0.18.0&loaddependencies=true
 
 var target = Argument("target", "Default");
 
@@ -36,44 +36,44 @@ var environment = Argument("environmentName", "DEV");
 Task("Transform-all-configs")
     .Does(() =>
     {
-    
+
         (string, string, string)[] trasfromations = GetPahts(environment, "./");
-        
+
         foreach ((var baseConfigPath, var transfromationConfigPath, var resultingConfigPath) in trasfromations)
         {
             WrtieLine("");
-            
-            Console.ForegroundColor = ConsoleColor.Green; 
-            WriteLine($"Running transform for: \r\n{baseConfigPath}\r\n{transfromationConfigPath}"); 
-            Console.ForegroundColor = ConsoleColor.White; 
-            var transformationLog = XdtTransformConfigWithDefaultLogger( 
-                                                            File(baseConfigPath), 
-                                                            File(transfromationConfigPath), 
-                                                            File(resultingConfigPath)); 
-                                                            
+
+            Console.ForegroundColor = ConsoleColor.Green;
+            WriteLine($"Running transform for: \r\n{baseConfigPath}\r\n{transfromationConfigPath}");
+            Console.ForegroundColor = ConsoleColor.White;
+            var transformationLog = XdtTransformConfigWithDefaultLogger(
+                                                            File(baseConfigPath),
+                                                            File(transfromationConfigPath),
+                                                            File(resultingConfigPath));
+
             var hasProblems = (transformationLog.HasError
-                                || transformationLog.HasException 
+                                || transformationLog.HasException
                                 || transformationLog.HasWarning);
-                                
-            if(hasProblems == false) 
-            { 
-                continue; 
-            } 
-            
-            Console.ForegroundColor = ConsoleColor.Red; 
-            WriteLine($"Tranfomration log has problems."); 
-            Console.ForegroundColor = ConsoleColor.White; 
+
+            if(hasProblems == false)
+            {
+                continue;
+            }
+
+            Console.ForegroundColor = ConsoleColor.Red;
+            WriteLine($"Tranfomration log has problems.");
+            Console.ForegroundColor = ConsoleColor.White;
 
             var problemEntries = transformationLog.Log
-                                            .Where(x => x.MessageType == "Error" 
+                                            .Where(x => x.MessageType == "Error"
                                                         || x.MessageType == "Exception"
-                                                        || x.MessageType == "Warning"); 
+                                                        || x.MessageType == "Warning");
 
             foreach (var entry in problemEntries)
             {
                 WriteLine(entry);
             }
-    
+
             Console.ForegroundColor = Console.Gray;
         }
     });
