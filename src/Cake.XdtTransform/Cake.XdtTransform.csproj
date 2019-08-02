@@ -2,27 +2,23 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
   </PropertyGroup>
 
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
-    <DocumentationFile>Cake.XdtTransform.xml</DocumentationFile>
+  <PropertyGroup>
+    <Authors>Jamie Phillips</Authors>
+    <Copyright>Copyright © 2015-$([System.DateTime]::Now.Year) - Jamie Phillips</Copyright>
+    <Description>Cake Addin for performing XDT based config file transforms.</Description>
+    <PackageIconUrl>https://cdn.jsdelivr.net/gh/cake-contrib/graphics/png/cake-contrib-medium.png</PackageIconUrl>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageProjectUrl>https://github.com/cake-contrib/Cake.XdtTransform</PackageProjectUrl>
+    <PackageTags>Cake;Script;Build;Transform;Config;XDT</PackageTags>
+    <RepositoryUrl>$(PackageProjectUrl)</RepositoryUrl>  
+    <RepositoryType>git</RepositoryType>  
   </PropertyGroup>
-
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <DocumentationFile>Cake.XdtTransform.xml</DocumentationFile>
-  </PropertyGroup>
-
+  
   <ItemGroup>
     <PackageReference Include="Cake.Core" Version="0.33.0" PrivateAssets="All" />
-    <PackageReference Include="DotNet.Xdt" Version="2.1.1">
-       <CopyToOutputDirectory>lib/netstandard2.0/DotNet.Xdt.dll</CopyToOutputDirectory>
-    </PackageReference>
+    <PackageReference Include="DotNet.Xdt" Version="2.1.1" />
   </ItemGroup>
-
-  <Target Name="CopyPackages" AfterTargets="Build">
-    <ItemGroup>
-      <PackageReferenceFiles Condition="%(PackageReference.CopyToOutputDirectory) != ''" Include="$(NugetPackageRoot)\dotnet.xdt\%(PackageReference.Version)\%(PackageReference.CopyToOutputDirectory)" />
-    </ItemGroup>
-    <Copy SourceFiles="@(PackageReferenceFiles)" DestinationFolder="$(OutDir)" />
-  </Target>
 </Project>
