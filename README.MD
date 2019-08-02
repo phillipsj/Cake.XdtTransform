@@ -4,6 +4,12 @@ This was adapted from an [open issue](https://github.com/cake-build/cake/issues/
 how to perform an XDT config transform. The issue is still open, but I didn't there would need to be an 
 extra dependency pulled in unless you really needed it and that is why it is still open.
 
+## Support
+
+If you would like to support this project, there are several opportunities. Pull Requests, bug reports, documentation, promotion, and encouragement are all great ways. If you would like to contribute monetarily, you can [Buy Me a Coffee](https://www.buymeacoffee.com/aQPnJ73O8).
+
+## Usage
+
 ```csharp
 #addin Cake.XdtTransform
 

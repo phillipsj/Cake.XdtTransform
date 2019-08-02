@@ -1,4 +1,4 @@
-#load nuget:https://www.myget.org/F/cake-contrib/api/v2?package=Cake.Recipe&prerelease
+#load nuget:?package=Cake.Recipe&version=1.0.0
 
 Environment.SetVariableNames();
 
@@ -10,7 +10,9 @@ BuildParameters.SetParameters(context: Context,
                             repositoryName: "Cake.XdtTransform",
                             appVeyorAccountName: "cakecontrib",
                             shouldRunDupFinder: false,
-                            shouldRunInspectCode: false);
+                            shouldRunInspectCode: false,
+                            shouldRunGitVersion: DirectoryExists(".git"), // This would allow building even without using a git repository
+                            shouldRunDotNetCorePack: true);
 
 BuildParameters.PrintParameters(Context);
 
@@ -20,5 +22,5 @@ ToolSettings.SetToolSettings(context: Context,
                                 BuildParameters.RootDirectoryPath + "/src/Cake.XdtTransform.Tests/*.cs" },
                             testCoverageFilter: "+[*]* -[xunit.*]* -[Cake.Core]* -[Cake.Testing]* -[*.Tests]* -[DotNet.Xdt]* -[FluentAssertions]*",
                             testCoverageExcludeByAttribute: "*.ExcludeFromCodeCoverage*",
-                            testCoverageExcludeByFile: "*/*Designer.cs;*/*.g.cs;*/*.g.i.cs");
+                            testCoverageExcludeByFile: "*/*Designer.cs;*/*.g.cs;*/*.g.i.cs;*/Microsoft.Build.Framework.Version.cs");
 Build.RunDotNetCore();
