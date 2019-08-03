@@ -13,7 +13,7 @@
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageProjectUrl>https://github.com/cake-contrib/Cake.XdtTransform</PackageProjectUrl>
     <PackageTags>Cake;Script;Build;Transform;Config;XDT</PackageTags>
-    <RepositoryUrl>$(PackageProjectUrl)</RepositoryUrl>  
+    <RepositoryUrl>$(PackageProjectUrl).git</RepositoryUrl>  
     <RepositoryType>git</RepositoryType>  
   </PropertyGroup>
   
