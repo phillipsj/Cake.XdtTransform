@@ -13,12 +13,14 @@
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageProjectUrl>https://github.com/cake-contrib/Cake.XdtTransform</PackageProjectUrl>
     <PackageTags>Cake;Script;Build;Transform;Config;XDT</PackageTags>
-    <RepositoryUrl>$(PackageProjectUrl).git</RepositoryUrl>  
-    <RepositoryType>git</RepositoryType>  
+    <RepositoryUrl>$(PackageProjectUrl).git</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
   </PropertyGroup>
-  
+
   <ItemGroup>
     <PackageReference Include="Cake.Core" Version="0.33.0" PrivateAssets="All" />
-    <PackageReference Include="DotNet.Xdt" Version="2.1.1" />
+    <PackageReference Include="DotNet.Xdt" Version="2.1.1">
+      <CopyToOutputDirectory>lib/netstandard2.0/DotNet.Xdt.dll</CopyToOutputDirectory>
+    </PackageReference>
   </ItemGroup>
 </Project>
