@@ -51,7 +51,7 @@ namespace Cake.XdtTransform {
         /// Task("TransformConfig")
         ///   .Does(() => {
         /// 
-        ///     Microsoft.Web.XmlTransform.IXmlTransformationLogger logger = GetLogger();
+        ///     DotNet.Xdt.IXmlTransformationLogger logger = GetLogger();
         /// 
         ///     var sourceFile = File("web.config");
         ///     var transformFile = File("web.release.config");
@@ -93,7 +93,7 @@ namespace Cake.XdtTransform {
         ///     var sourceFile = File("web.config");
         ///     var transformFile = File("web.release.config");
         ///     var targetFile = File("web.target.config");
-        ///     var log = XdtTransformConfigWithDefaultLogger(sourceFile, transformFile, targetFile, logger);
+        ///     var log = XdtTransformConfigWithDefaultLogger(sourceFile, transformFile, targetFile);
         ///     
         ///     if(log.HasWarning)
         ///     {
