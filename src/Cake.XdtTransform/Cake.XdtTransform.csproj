@@ -1,24 +1,42 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFrameworks>netstandard2.0;net5.0</TargetFrameworks>
+    <TargetFrameworks>net5.0;netstandard2.0</TargetFrameworks>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
+
+    <PublishRepositoryUrl>true</PublishRepositoryUrl>
+    <DebugType>portable</DebugType>
+    <IncludeSymbols>true</IncludeSymbols>
+    <EmbedUntrackedSources>true</EmbedUntrackedSources>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+    <AllowedOutputExtensionsInPackageBuildOutputFolder>$(AllowedOutputExtensionsInPackageBuildOutputFolder);.pdb</AllowedOutputExtensionsInPackageBuildOutputFolder>
+
+    <NoWarn>$(NoWarn);NU5048</NoWarn>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <TreatSpecificWarningsAsErrors />
   </PropertyGroup>
 
   <PropertyGroup>
     <Authors>Jamie Phillips</Authors>
-    <Copyright>Copyright © 2015-$([System.DateTime]::Now.Year) - Jamie Phillips</Copyright>
+    <Copyright>Copyright (c) 2015-$([System.DateTime]::Now.Year) Cake Contributions</Copyright>
     <Description>Cake Addin for performing XDT based config file transforms.</Description>
+    <PackageIcon>images\icon.png</PackageIcon>
     <PackageIconUrl>https://cdn.jsdelivr.net/gh/cake-contrib/graphics/png/cake-contrib-medium.png</PackageIconUrl>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageProjectUrl>https://github.com/cake-contrib/Cake.XdtTransform</PackageProjectUrl>
-    <PackageTags>Cake;Script;Build;Transform;Config;XDT</PackageTags>
-    <RepositoryUrl>$(PackageProjectUrl).git</RepositoryUrl>  
-    <RepositoryType>git</RepositoryType>  
+    <PackageTags>cake;xdt;xdt-transform;cake-addin;cake-build;cake-contrib;addin;script;build;transform;xdttransform;config</PackageTags>
+    <RepositoryUrl>$(PackageProjectUrl).git</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
   </PropertyGroup>
-  
+
   <ItemGroup>
     <PackageReference Include="Cake.Core" Version="1.0.0" PrivateAssets="All" />
     <PackageReference Include="DotNet.Xdt" Version="2.2.1" />
+    <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.0.0" PrivateAssets="All" />
   </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\..\asset\cake-contrib-medium.png" Pack="true" Visible="false" PackagePath="images\icon.png" />
+  </ItemGroup>
+
 </Project>
