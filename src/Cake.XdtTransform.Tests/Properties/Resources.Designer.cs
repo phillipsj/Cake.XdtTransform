@@ -19,7 +19,7 @@ namespace Cake.XdtTransform.Tests.Properties {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     internal class Resources {
@@ -61,20 +61,15 @@ namespace Cake.XdtTransform.Tests.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;?xml version=&quot;1.0&quot;?&gt;
-        ///&lt;configuration xmlns:xdt=&quot;http://schemas.microsoft.com/XML-Document-Transform&quot;&gt;
-        ///    &lt;appSettings&gt;
+        ///   Looks up a localized string similar to &lt;appSettings&gt;
         ///        &lt;add key=&quot;transformed&quot; value=&quot;false&quot; xdt:Transform=&quot;SetAttributes&quot; xdt:Locator=&quot;Match(key)&quot;/&gt;
         ///	&lt;add key=&quot;this-is-missing&quot; value=&quot;false&quot; xdt:Transform=&quot;SetAttributes&quot; xdt:Locator=&quot;Match(key)&quot;/&gt;
         ///    &lt;/appSettings&gt;
-        ///  &lt;system.web&gt;
-        ///    &lt;compilation xdt:Transform=&quot;RemoveAttributes(debug)&quot; /&gt;
-        ///  &lt;/system.web&gt;
-        ///&lt;/configuration&gt;.
+        ///.
         /// </summary>
-        internal static string XdtTramsformation_TransformFile {
+        internal static string XdtTransformation_DocumentFragment {
             get {
-                return ResourceManager.GetString("XdtTramsformation_TransformFile", resourceCulture);
+                return ResourceManager.GetString("XdtTransformation_DocumentFragment", resourceCulture);
             }
         }
         
@@ -87,7 +82,7 @@ namespace Cake.XdtTransform.Tests.Properties {
         ///&lt;configuration&gt;
         ///  &lt;configSections&gt;
         ///    &lt;!-- For more information on Entity Framework configuration, visit http://go.microsoft.com/fwlink/?LinkID=237468 --&gt;
-        ///    &lt;section name=&quot;entityFramework&quot; type=&quot;System.Data.Entity.Internal.ConfigFile.EntityFrameworkSection, EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyTok [rest of string was truncated]&quot;;.
+        ///    &lt;section name=&quot;entityFramework&quot; type=&quot;System.Data.Entity.Internal.ConfigFile.EntityFrameworkSection, EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5 [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string XdtTransformation_SourceFile {
             get {
@@ -104,11 +99,29 @@ namespace Cake.XdtTransform.Tests.Properties {
         ///&lt;configuration&gt;
         ///  &lt;configSections&gt;
         ///    &lt;!-- For more information on Entity Framework configuration, visit http://go.microsoft.com/fwlink/?LinkID=237468 --&gt;
-        ///    &lt;section name=&quot;entityFramework&quot; type=&quot;System.Data.Entity.Internal.ConfigFile.EntityFrameworkSection, EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyTok [rest of string was truncated]&quot;;.
+        ///    &lt;section name=&quot;entityFramework&quot; type=&quot;System.Data.Entity.Internal.ConfigFile.EntityFrameworkSection, EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5 [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string XdtTransformation_TargetFile {
             get {
                 return ResourceManager.GetString("XdtTransformation_TargetFile", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;?xml version=&quot;1.0&quot;?&gt;
+        ///&lt;configuration xmlns:xdt=&quot;http://schemas.microsoft.com/XML-Document-Transform&quot;&gt;
+        ///    &lt;appSettings&gt;
+        ///        &lt;add key=&quot;transformed&quot; value=&quot;false&quot; xdt:Transform=&quot;SetAttributes&quot; xdt:Locator=&quot;Match(key)&quot;/&gt;
+        ///	&lt;add key=&quot;this-is-missing&quot; value=&quot;false&quot; xdt:Transform=&quot;SetAttributes&quot; xdt:Locator=&quot;Match(key)&quot;/&gt;
+        ///    &lt;/appSettings&gt;
+        ///  &lt;system.web&gt;
+        ///    &lt;compilation xdt:Transform=&quot;RemoveAttributes(debug)&quot; /&gt;
+        ///  &lt;/system.web&gt;
+        ///&lt;/configuration&gt;.
+        /// </summary>
+        internal static string XdtTransformation_TransformFile {
+            get {
+                return ResourceManager.GetString("XdtTransformation_TransformFile", resourceCulture);
             }
         }
     }
