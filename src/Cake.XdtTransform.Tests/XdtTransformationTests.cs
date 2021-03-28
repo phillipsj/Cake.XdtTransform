@@ -15,7 +15,7 @@ namespace Cake.XdtTransform.Tests {
             var result = Record.Exception(() => fixture.TransformConfig());
 
             // Then
-            result.Should().BeOfType<ArgumentNullException>().Subject.ParamName.Should().Equals("sourceFile");
+            result.Should().BeOfType<ArgumentNullException>().Subject.ParamName.Should().Be("sourceFile");
         }
 
         [Fact]
@@ -27,7 +27,7 @@ namespace Cake.XdtTransform.Tests {
             var result = Record.Exception(() => fixture.TransformConfig());
 
             // Then
-            result.Should().BeOfType<ArgumentNullException>().Subject.ParamName.Should().Equals("transformFile");
+            result.Should().BeOfType<ArgumentNullException>().Subject.ParamName.Should().Be("transformFile");
         }
 
         [Fact]
@@ -39,7 +39,7 @@ namespace Cake.XdtTransform.Tests {
             var result = Record.Exception(() => fixture.TransformConfig());
 
             // Then
-            result.Should().BeOfType<ArgumentNullException>().Subject.ParamName.Should().Equals("targetFile");
+            result.Should().BeOfType<ArgumentNullException>().Subject.ParamName.Should().Be("targetFile");
         }
 
         [Fact]
@@ -103,7 +103,7 @@ namespace Cake.XdtTransform.Tests {
             log.HasError.Should().BeFalse();
             log.HasException.Should().BeFalse();
             log.HasWarning.Should().BeTrue();
-            log.Log.Count.Should().Equals(15);
+            log.Log.Count.Should().Be(15);
         }
 
         [Fact]

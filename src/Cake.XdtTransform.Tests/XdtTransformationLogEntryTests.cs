@@ -14,7 +14,7 @@ namespace Cake.XdtTransform.Tests {
 
             CultureUtil.UseGBCulture(() => { stringRepresentation = item.ToString(); });
 
-            stringRepresentation.Should().Equals("[02/01/2000 03:04:05] ");
+            stringRepresentation.Should().Be("[02/01/2000 03:04:05] ");
         }
 
         [Fact]
