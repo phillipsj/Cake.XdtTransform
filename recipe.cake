@@ -20,7 +20,7 @@ ToolSettings.SetToolSettings(context: Context,
                             buildMSBuildToolVersion : MSBuildToolVersion.VS2017,
                             dupFinderExcludePattern: new string[] {
                                 BuildParameters.RootDirectoryPath + "/src/Cake.XdtTransform.Tests/*.cs" },
-                            testCoverageFilter: "+[*]* -[xunit.*]* -[Cake.Core]* -[Cake.Testing]* -[*.Tests]* -[DotNet.Xdt]* -[FluentAssertions]*",
+                            testCoverageFilter: "+[*]* -[xunit.*]* -[Cake.Core]* -[Cake.Testing]* -[*.Tests]* -[DotNet.Xdt]* -[FluentAssertions]* -[Moq]*",
                             testCoverageExcludeByAttribute: "*.ExcludeFromCodeCoverage*",
                             testCoverageExcludeByFile: "*/*Designer.cs;*/*.g.cs;*/*.g.i.cs;*/Microsoft.Build.Framework.Version.cs");
 Build.RunDotNetCore();

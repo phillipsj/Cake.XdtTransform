@@ -117,17 +117,12 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="XdtTramsformation_TransformFile" xml:space="preserve">
-    <value>&lt;?xml version="1.0"?&gt;
-&lt;configuration xmlns:xdt="http://schemas.microsoft.com/XML-Document-Transform"&gt;
-    &lt;appSettings&gt;
+  <data name="XdtTransformation_DocumentFragment" xml:space="preserve">
+    <value>&lt;appSettings&gt;
         &lt;add key="transformed" value="false" xdt:Transform="SetAttributes" xdt:Locator="Match(key)"/&gt;
 	&lt;add key="this-is-missing" value="false" xdt:Transform="SetAttributes" xdt:Locator="Match(key)"/&gt;
     &lt;/appSettings&gt;
-  &lt;system.web&gt;
-    &lt;compilation xdt:Transform="RemoveAttributes(debug)" /&gt;
-  &lt;/system.web&gt;
-&lt;/configuration&gt;</value>
+</value>
   </data>
   <data name="XdtTransformation_SourceFile" xml:space="preserve">
     <value>&lt;?xml version="1.0" encoding="utf-8"?&gt;
@@ -331,5 +326,17 @@
   &lt;/system.codedom&gt;
 &lt;/configuration&gt;
 &lt;!--ProjectGuid: 28591C5B-D9AF-4711-A816-DBEBB12A58FD--&gt;</value>
+  </data>
+  <data name="XdtTransformation_TransformFile" xml:space="preserve">
+    <value>&lt;?xml version="1.0"?&gt;
+&lt;configuration xmlns:xdt="http://schemas.microsoft.com/XML-Document-Transform"&gt;
+    &lt;appSettings&gt;
+        &lt;add key="transformed" value="false" xdt:Transform="SetAttributes" xdt:Locator="Match(key)"/&gt;
+	&lt;add key="this-is-missing" value="false" xdt:Transform="SetAttributes" xdt:Locator="Match(key)"/&gt;
+    &lt;/appSettings&gt;
+  &lt;system.web&gt;
+    &lt;compilation xdt:Transform="RemoveAttributes(debug)" /&gt;
+  &lt;/system.web&gt;
+&lt;/configuration&gt;</value>
   </data>
 </root>
