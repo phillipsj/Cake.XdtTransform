@@ -18,7 +18,7 @@
 
   <PropertyGroup>
     <Authors>Jamie Phillips</Authors>
-    <Copyright>Copyright (c) 2015-$([System.DateTime]::Now.Year) Cake Contributions</Copyright>
+    <Copyright>Copyright (c) 2015-$([System.DateTime]::Now.Year) Jamie Phillips</Copyright>
     <Description>Cake Addin for performing XDT based config file transforms.</Description>
     <PackageIcon>images\icon.png</PackageIcon>
     <PackageIconUrl>https://cdn.jsdelivr.net/gh/cake-contrib/graphics/png/cake-contrib-medium.png</PackageIconUrl>

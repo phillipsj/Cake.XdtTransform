@@ -8,6 +8,10 @@ extra dependency pulled in unless you really needed it and that is why it is sti
 
 If you would like to support this project, there are several opportunities. Pull Requests, bug reports, documentation, promotion, and encouragement are all great ways. If you would like to contribute monetarily, you can [Buy Me a Coffee](https://www.buymeacoffee.com/aQPnJ73O8).
 
+## Contributions
+
+This repository uses GitHub Flow, please create a feature branch then submit your PRs to main.
+
 ## Usage
 
 ```csharp
