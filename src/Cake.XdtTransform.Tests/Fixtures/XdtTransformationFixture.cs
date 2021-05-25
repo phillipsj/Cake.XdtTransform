@@ -8,9 +8,15 @@ using FluentAssertions;
 namespace Cake.XdtTransform.Tests.Fixtures {
     internal sealed class XdtTransformationFixture {
         public IFileSystem FileSystem { get; set; }
+        
         public FilePath SourceFile { get; set; }
+        
         public FilePath TransformFile { get; set; }
+        
         public FilePath TargetFile { get; set; }
+        
+        public XdtFileSource TransformFileSource { get; set; }
+
 
         public XdtTransformationFixture(bool sourceFileExists = true, bool transformFileExists = true, bool targetFileExists = false) {
             var environment = FakeEnvironment.CreateUnixEnvironment();
@@ -23,8 +29,10 @@ namespace Cake.XdtTransform.Tests.Fixtures {
             }
 
             if (transformFileExists) {
-                var transformFile = fileSystem.CreateFile("/Working/web.release.config").SetContent(Resources.XdtTramsformation_TransformFile);
+                var transformFile = fileSystem.CreateFile("/Working/web.release.config").SetContent(Resources.XdtTransformation_TransformFile);
                 TransformFile = transformFile.Path;
+
+                TransformFileSource = new XdtFileSource(fileSystem.GetFile(TransformFile));
             }
 
             if (targetFileExists) {
@@ -43,6 +51,18 @@ namespace Cake.XdtTransform.Tests.Fixtures {
 
         public XdtTransformationLog TransformConfigWithDefaultLogger() {
             return XdtTransformation.TransformConfigWithDefaultLogger(FileSystem, SourceFile, TransformFile, TargetFile);
+        }
+
+        public void TransformConfig(FilePath sourceFile, FilePath transformFile, FilePath targetFile, XdtTransformationSettings settings) {
+	        new XdtTransformation(FileSystem).TransformConfig(sourceFile, transformFile, targetFile, settings);
+        }
+
+        public void TransformConfig(FilePath sourceFile, FilePath targetFile, XdtSource transformation, XdtTransformationSettings settings) {
+	        new XdtTransformation(FileSystem).TransformConfig(sourceFile, targetFile, transformation, settings);
+        }
+
+        public void TransformConfig(XdtSource source, XdtTransformationSettings settings) {
+	        new XdtTransformation(FileSystem).TransformConfig(SourceFile, TargetFile, source, settings);
         }
 
         public string GetTargetFileContent() {
