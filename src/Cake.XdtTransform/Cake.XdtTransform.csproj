@@ -23,7 +23,7 @@
     <PackageIcon>images\icon.png</PackageIcon>
     <PackageIconUrl>https://cdn.jsdelivr.net/gh/cake-contrib/graphics/png/cake-contrib-medium.png</PackageIconUrl>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
-    <PackageProjectUrl>https://github.com/cake-contrib/Cake.XdtTransform</PackageProjectUrl>
+    <PackageProjectUrl>https://github.com/phillipsj/Cake.XdtTransform</PackageProjectUrl>
     <PackageTags>cake;xdt;xdt-transform;cake-addin;cake-build;cake-contrib;addin;script;build;transform;xdttransform;config</PackageTags>
     <RepositoryUrl>$(PackageProjectUrl).git</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
