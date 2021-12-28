@@ -8,13 +8,13 @@ using FluentAssertions;
 namespace Cake.XdtTransform.Tests.Fixtures {
     internal sealed class XdtTransformationFixture {
         public IFileSystem FileSystem { get; set; }
-        
+
         public FilePath SourceFile { get; set; }
-        
+
         public FilePath TransformFile { get; set; }
-        
+
         public FilePath TargetFile { get; set; }
-        
+
         public XdtFileSource TransformFileSource { get; set; }
 
 
@@ -38,7 +38,8 @@ namespace Cake.XdtTransform.Tests.Fixtures {
             if (targetFileExists) {
                 var targetFile = fileSystem.CreateFile("/Working/transformed.config").SetContent(Resources.XdtTransformation_TargetFile);
                 TargetFile = targetFile.Path;
-            } else {
+            }
+            else {
                 TargetFile = "/Working/transformed.config";
             }
 
@@ -54,15 +55,15 @@ namespace Cake.XdtTransform.Tests.Fixtures {
         }
 
         public void TransformConfig(FilePath sourceFile, FilePath transformFile, FilePath targetFile, XdtTransformationSettings settings) {
-	        new XdtTransformation(FileSystem).TransformConfig(sourceFile, transformFile, targetFile, settings);
+            new XdtTransformation(FileSystem).TransformConfig(sourceFile, transformFile, targetFile, settings);
         }
 
         public void TransformConfig(FilePath sourceFile, FilePath targetFile, XdtSource transformation, XdtTransformationSettings settings) {
-	        new XdtTransformation(FileSystem).TransformConfig(sourceFile, targetFile, transformation, settings);
+            new XdtTransformation(FileSystem).TransformConfig(sourceFile, targetFile, transformation, settings);
         }
 
         public void TransformConfig(XdtSource source, XdtTransformationSettings settings) {
-	        new XdtTransformation(FileSystem).TransformConfig(SourceFile, TargetFile, source, settings);
+            new XdtTransformation(FileSystem).TransformConfig(SourceFile, TargetFile, source, settings);
         }
 
         public string GetTargetFileContent() {

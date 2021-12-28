@@ -8,7 +8,6 @@ using Xunit;
 
 namespace Cake.XdtTransform.Tests {
     public sealed class XdtTransformationTests {
-
         public sealed class TheCtor {
             [Fact]
             public void ShouldThrowIfFileSystemIsNull() {
@@ -22,7 +21,7 @@ namespace Cake.XdtTransform.Tests {
             [Fact]
             public void ShouldErrorIfSourceFileIsNull() {
                 // Given
-                var fixture = new XdtTransformationFixture { SourceFile = null };
+                var fixture = new XdtTransformationFixture {SourceFile = null};
 
                 // When
                 var result = Record.Exception(() => fixture.TransformConfig());
@@ -34,7 +33,7 @@ namespace Cake.XdtTransform.Tests {
             [Fact]
             public void ShouldErrorIfTransformFileIsNull() {
                 // Given
-                var fixture = new XdtTransformationFixture { TransformFile = null };
+                var fixture = new XdtTransformationFixture {TransformFile = null};
 
                 // When
                 var result = Record.Exception(() => fixture.TransformConfig());
@@ -46,7 +45,7 @@ namespace Cake.XdtTransform.Tests {
             [Fact]
             public void ShouldErrorIfTargetFileIsNull() {
                 // Given
-                var fixture = new XdtTransformationFixture { TargetFile = null };
+                var fixture = new XdtTransformationFixture {TargetFile = null};
 
                 // When
                 var result = Record.Exception(() => fixture.TransformConfig());
@@ -58,8 +57,7 @@ namespace Cake.XdtTransform.Tests {
             [Fact]
             public void ShouldErrorIfSourceFileNotExists() {
                 // Given
-                var fixture = new XdtTransformationFixture(sourceFileExists: false)
-                {
+                var fixture = new XdtTransformationFixture(sourceFileExists: false) {
                     SourceFile = "/Working/non-existing.config"
                 };
 
@@ -73,8 +71,7 @@ namespace Cake.XdtTransform.Tests {
             [Fact]
             public void ShouldErrorIfTransformFileNotExists() {
                 // Given
-                var fixture = new XdtTransformationFixture(transformFileExists: false)
-                {
+                var fixture = new XdtTransformationFixture(transformFileExists: false) {
                     TransformFile = "/Working/non-existing-transform.config"
                 };
 
@@ -88,8 +85,7 @@ namespace Cake.XdtTransform.Tests {
             [Fact]
             public void ShouldTransformFile() {
                 // Given
-                var fixture = new XdtTransformationFixture
-                {
+                var fixture = new XdtTransformationFixture {
                     TargetFile = "/Working/transformed.config"
                 };
 
@@ -104,8 +100,7 @@ namespace Cake.XdtTransform.Tests {
             [Fact]
             public void ShouldTransformFileWithDefaultLogger() {
                 // Given
-                var fixture = new XdtTransformationFixture
-                {
+                var fixture = new XdtTransformationFixture {
                     TargetFile = "/Working/transformed.config"
                 };
 
@@ -156,12 +151,12 @@ namespace Cake.XdtTransform.Tests {
 
                 ex.Should().BeOfType<ArgumentNullException>().Subject.ParamName.Should().Be("transformFile");
             }
-            
+
             [Fact]
             public void ShouldThrowWhenTargetFileIsNull() {
                 var fixture = new XdtTransformationFixture();
 
-                var ex = Record.Exception(() => fixture.TransformConfig(fixture.SourceFile, fixture.TransformFile, (FilePath)null, new XdtTransformationSettings()));
+                var ex = Record.Exception(() => fixture.TransformConfig(fixture.SourceFile, fixture.TransformFile, (FilePath) null, new XdtTransformationSettings()));
 
                 ex.Should().BeOfType<ArgumentNullException>().Subject.ParamName.Should().Be("targetFile");
             }
@@ -177,7 +172,7 @@ namespace Cake.XdtTransform.Tests {
 
             [Fact]
             public void ShouldTransformFile() {
-                var fixture = new XdtTransformationFixture { TargetFile = "/Working/transformed.config"};
+                var fixture = new XdtTransformationFixture {TargetFile = "/Working/transformed.config"};
 
                 fixture.TransformConfig(fixture.SourceFile, fixture.TransformFile, fixture.TargetFile, new XdtTransformationSettings());
 
@@ -209,7 +204,7 @@ namespace Cake.XdtTransform.Tests {
             public void ShouldThrowWhenXdtTransformIsNull() {
                 var fixture = new XdtTransformationFixture();
 
-                var ex = Record.Exception(() => fixture.TransformConfig(fixture.SourceFile, fixture.TargetFile, (XdtSource)null, new XdtTransformationSettings()));
+                var ex = Record.Exception(() => fixture.TransformConfig(fixture.SourceFile, fixture.TargetFile, (XdtSource) null, new XdtTransformationSettings()));
 
                 ex.Should().BeOfType<ArgumentNullException>().Subject.ParamName.Should().Be("transformation");
             }
@@ -225,7 +220,7 @@ namespace Cake.XdtTransform.Tests {
 
             [Fact]
             public void ShouldTransformFileUsingXdtFileTransform() {
-                var fixture = new XdtTransformationFixture { TargetFile = "/Working/transformed.config" };
+                var fixture = new XdtTransformationFixture {TargetFile = "/Working/transformed.config"};
 
                 fixture.TransformConfig(fixture.SourceFile, fixture.TargetFile, fixture.TransformFileSource, new XdtTransformationSettings());
 
@@ -235,7 +230,7 @@ namespace Cake.XdtTransform.Tests {
 
             [Fact]
             public void ShouldTransformFileUsingXdtDocumentTransform() {
-                var fixture = new XdtTransformationFixture { TargetFile = "/Working/transformed.config" };
+                var fixture = new XdtTransformationFixture {TargetFile = "/Working/transformed.config"};
 
                 var transform = new XdtDocumentSource(Resources.XdtTransformation_TransformFile);
                 fixture.TransformConfig(fixture.SourceFile, fixture.TargetFile, transform, new XdtTransformationSettings());
@@ -246,7 +241,7 @@ namespace Cake.XdtTransform.Tests {
 
             [Fact]
             public void ShouldTransformFileUsingXdtFragmentTransform() {
-                var fixture = new XdtTransformationFixture { TargetFile = "/Working/transformed.config" };
+                var fixture = new XdtTransformationFixture {TargetFile = "/Working/transformed.config"};
 
                 var transform = new XdtFragmentSource(Resources.XdtTransformation_DocumentFragment);
                 fixture.TransformConfig(fixture.SourceFile, fixture.TargetFile, transform, new XdtTransformationSettings());
