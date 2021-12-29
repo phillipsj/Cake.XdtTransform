@@ -1,0 +1,32 @@
+name: Release
+on:
+  release:
+    types:
+      - published
+jobs:
+  release:
+    name: Release
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Fetch all branches and tags
+        run: git fetch --prune
+        
+      - name: Install .NET SDKs
+        uses: actions/setup-dotnet@v1
+        with:
+          dotnet-version: |
+            3.1.x
+            5.0.x
+            6.0.x
+
+      - name: Run Cake
+        env:
+          NUGET_SOURCE: ${{ secrets.NUGET_SOURCE }}
+          NUGET_API_KEY: ${{ secrets.NUGET_API_KEY }}
+        uses: cake-build/cake-action@v1
+        with:
+          target: Publish
+          cake-version: tool-manifest
