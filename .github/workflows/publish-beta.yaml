@@ -26,7 +26,7 @@ jobs:
       - name: Run Cake
         env:
           NUGET_SOURCE: ${{ secrets.NUGET_SOURCE }}
-          NUGET_API_KEY: ${{ secrets.GITHUB_TOKEN }}
+          NUGET_API_KEY: ${{ secrets.NUGET_API_KEY }}
         uses: cake-build/cake-action@v1
         with:
           target: Publish
